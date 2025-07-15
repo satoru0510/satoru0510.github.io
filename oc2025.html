@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang=ja>
+<head>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="main.css">
+<title>OC2025</title>
+</head>
+
+<body>
+    <h1>オープンキャンパス2025</h1>
+    オープンキャンパスの参加者向けに、GUIで量子回路を作り、量子回路学習を体験できるアプリを作成した。
+
+    <p>目次</p>
+    <div class="index">
+        <ul>
+            <li>><a href="#usage">使い方</a></li>
+            <li>><a href="#description">解説</a></li>
+        </ul>
+    </div>
+
+    <h2 id="usage">使い方</h2>
+    <p>まだインストールしていない場合は、Juliaをインストールする。（<a href="https://julialang.org/install/">参考</a>）
+    手動でインストールする方法もあるが、こだわりがないなら公式のツールjuliaupを使う。
+    （juliaupが無かった時の古い情報は、手動インストールを紹介していることがある。）</p>
+    <p>WindowsならコマンドプロンプトまたはPowerShellで
+    <div class="code">
+        > winget install --name Julia --id 9NJNWW8PVKMN -e -s msstore
+    </div>
+    MacまたはLinuxならターミナルで
+    <div class="code">
+        > curl -fsSL https://install.julialang.org | sh
+    </div>
+    を実行するとjuliaupおよび最新バージョンのjuliaがインストールされる。途中何か聞かれたら、はい/YesでOK。</p>
+    <p>インストールが終わったら、コマンドプロンプト/PowerShell/ターミナル（以下、まとめてターミナルと呼ぶ）
+        でJuliaを実行する。
+        <div class="code"><pre>
+> julia
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.10.10 (2025-06-27)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia></pre></div>
+        とじ角かっこ]を押すとパッケージモードになる。
+        <div class="code">pkg></div>
+        パッケージモードでアプリをダウンロード、インストールする。
+        <div class="code">pkg> add https://github.com/satoru0510/OpenCampus2025</div>
+        これには数分～数十分かかる。これでインストールは完了。アプリを実行するには、
+        <div class="code">
+            julia> using OpenCampus2025<br>
+            julia> OpenCampus2025.init()<br>
+            initialization completed<br>
+            run_demo()
+        </div>
+        とすればウィンドウが立ち上がる。
+    </p>
+    <img src="assets/oc2025_blank.png" width="60%"><br>
+    <p>画面上部、「リセット」ボタンの横に並んでいるプルダウンメニューから量子ゲートを選び、
+        変分量子回路を作る。「実行」ボタンを押して、学習を開始する。
+    </p>
+    <img src="assets/oc2025_running.png" width="60%"><br>
+    <p>学習が終わると、コスト関数の履歴のグラフと、テストデータに対しての成績、実行時間が表示される。</p>
+    <img src="assets/oc2025_done.png" width="60%"><br>
+    <p>成績が良く、かつ実行時間が短い回路を作ろう！</p>
+
+    <h2 id="description">解説</h2>
+    <h3>量子回路学習とは</h3>
+    <h3>今回用いるデータセットと前処理</h3>
+
+    <a href="index.html">トップに戻る</a>
+</body>
+</html>

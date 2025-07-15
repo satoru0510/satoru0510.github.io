@@ -1,0 +1,33 @@
+body {
+  margin: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: whitesmoke;
+}
+
+h1{
+    font-size: x-large;
+}
+
+h2{
+    background-color: lightblue;
+    margin-top: 50px;
+    font-size: large;
+    padding-left: 1em;
+    width: 80%;
+}
+
+div.index{
+    border-style: solid;
+    border-radius: 10px;
+    padding-left: 1em;
+    width: 50%;
+}
+
+div.code{
+    font-family: "Cascadia Code", monospace;
+    background-color: black;
+    color: white;
+    width: 75%;
+    padding-left: 1em;
+}
