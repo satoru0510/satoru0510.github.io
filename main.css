@@ -2,7 +2,7 @@ body {
   margin: 50px;
   margin-left: 50px;
   margin-right: 50px;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 h1{
@@ -30,4 +30,8 @@ div.code{
     color: white;
     width: 75%;
     padding-left: 1em;
+}
+
+div.content{
+    width: 80%;
 }
