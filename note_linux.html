@@ -11,7 +11,42 @@
 <body>
     <p>目次</p>
     <div class="index">
+        <ul>
+            <li><a href="#Cubic">Cubic（カスタムOSイメージ作成ソフト）</a></li>
+            <li><a href="#nopass_sudo">パスワードなしでsudoできるようにする（Ubuntu）</a></li>
+            <li><a href="#samba">Sambaのセットアップ</a></li>
+            <li><a href="#nas">NASをマウントする</a></li>
+        </ul>
     </div>
+
+    <h2 id="Cubic"><a href="https://github.com/PJ-Singh-001/Cubic">Cubic</a>（カスタムOSイメージ作成ソフト）</h2>
+    Ubuntuでの実行を前提とする。
+    Ubuntuへのインストール
+    （<a href="https://github.com/PJ-Singh-001/Cubic/wiki/Install-Cubic#-ubuntu-and-derivatives">参考</a>）
+    <div class="code"><pre>
+sudo apt-add-repository universe
+sudo apt-add-repository ppa:cubic-wizard/release
+sudo apt update
+sudo apt install --no-install-recommends cubic</pre></div>
+
+    <h2 id="nopass_sudo">パスワードなしでsudoできるようにする（Ubuntu）</h2>
+    <strong>当然、セキュリティリスクが激増するため安易に行ってはいけない。</strong><br>
+    以下のコマンドで、sudo権限を編集する。
+    <div class="code">sudo visudo</div>
+    ファイルに以下を追記する。
+    <div class="code">＜ユーザ名＞ ALL=NOPASSWD: ALL</div>
+
+    <h2 id="samba">Sambaのセットアップ</h2>
+    <a href="https://ubuntu.com/tutorials/install-and-configure-samba#1-overview">
+        https://ubuntu.com/tutorials/install-and-configure-samba#1-overview</a>
+
+    <h2 id="nas">NASをマウントする（<a href="https://xn--v6q832hwdkvom.com/post/ubuntu%E3%81%A7nas%E5%86%85%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AB%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%99%E3%82%8B/">参考</a>）</h2>
+    マウントポイントを作成する
+    <div class="code">mkdir sambashare</div>
+    cifs-utilsパッケージインストール
+    <div class="code">sudo apt install cifs-utils -y</div>
+    マウント
+    <div class="code">sudo mount -t cifs -o noperm,username=＜NASのユーザー名＞,password=＜NASのパスワード＞ //＜NASのIPアドレス＞/＜共有フォルダ＞ /nas/data</div>
 
     <a href="index.html">トップに戻る</a>
 </body>
