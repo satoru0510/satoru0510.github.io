@@ -35,3 +35,17 @@ div.code{
 div.content{
     width: 80%;
 }
+
+span.jblue{
+    color: #4063d8;
+}
+
+span.jgreen{
+    color: #389826;
+}
+
+span.code{
+    font-family: "Cascadia Code", monospace;
+    background-color: black;
+    color: white;
+}

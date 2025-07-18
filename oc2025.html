@@ -46,19 +46,21 @@
  _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
 |__/                   |
 
-julia></pre></div>
+<span class="jgreen">julia></span></pre></div>
         とじ角かっこ]を押すとパッケージモードになる。
-        <div class="code">pkg></div>
+        <div class="code"><span class="jblue">pkg></span></div>
         パッケージモードでアプリをダウンロード、インストールする。
-        <div class="code">pkg> add https://github.com/satoru0510/OpenCampus2025</div>
-        これには数分～数十分かかる。これでインストールは完了。アプリを実行するには、
+        <div class="code"><span class="jblue">pkg></span> add https://github.com/satoru0510/OpenCampus2025</div>
+        これには数分～数十分かかる。これでインストールは完了。アプリを実行するには、Backspaceで通常モードに戻って、
         <div class="code">
-            julia> using OpenCampus2025<br>
-            julia> OpenCampus2025.init()<br>
-            initialization completed<br>
-            run_demo()
+            <span class="jgreen">julia></span> using OpenCampus2025<br><br>
+            <span class="jgreen">julia></span> OpenCampus2025.init()<br>
+            initialization completed<br><br>
+            <span class="jgreen">julia></span> run_demo()
         </div>
-        とすればウィンドウが立ち上がる。
+        初回実行時は<span class="code">OpenCampus2025.init()</span>で学習に必要なデータ（MNIST）をダウンロードするため、
+        「ダウンロードして良いか？」のようなことが聞かれる。<br>
+        <span class="code">run_demo()</span>でウィンドウが開く。
     </p>
     <img src="assets/oc2025_blank.png" width="60%"><br>
     <p>画面上部、「リセット」ボタンの横に並んでいるプルダウンメニューから量子ゲートを選び、
@@ -70,7 +72,10 @@ julia></pre></div>
     <p>成績が良く、かつ実行時間が短い回路を作ろう！</p>
 
     <h2 id="description">解説</h2>
-    <h3>量子回路学習とは</h3>
+    <h3>量子回路学習とは
+        （<a href="https://dojo.qulacs.org/ja/latest/notebooks/5.2_Quantum_Circuit_Learning.html">参考</a>）</h3>
+    <p></p>
+
     <h3>今回用いるデータセットと前処理</h3>
 
     <a href="index.html">トップに戻る</a>
