@@ -15,11 +15,47 @@
         <ul>
             <li><a href="oc2025.html#usage">インストール</a></li>
             <li><a href="#electron">Electron.jlの基本的なこと</a></li>
+            <li><a href="#package">パッケージの作り方</a></li>
+            <li><a href="jisaq.html#cuda">CUDA.jlによるカーネルプログラミング</a></li>
             <li><a href="#whyjulia">なぜ私はJuliaを使うのか？（エッセイ）</a></li>
         </ul>
     </div>
 
-    <h2 id="electron">Electron.jlの基本的なこと</h2>
+    <h2 id="electron"><a href="https://github.com/davidanthoff/Electron.jl">
+        Electron.jl</a>の基本的なこと
+        （<a href="https://qiita.com/MandoNarin/items/188a14565754612e31a0">参考</a>）</h2>
+    <p></p>
+
+    <h2 id="package">パッケージの作り方</h2>
+    Juliaのパッケージ（<span class="code"><span class="jblue">pkg>&nbsp;</span>add XXX</span>）で追加できるやつを自分で作る方法
+    <p>まず、REPLのパッケージモードでプロジェクトを作る。
+        <div class="code"><pre>
+<span class="jblue">pkg>&nbsp;</span> generate ＜パッケージ名＞
+  <span class="jgreen">Generating</span>  project ＜パッケージ名＞:
+    ＜パッケージ名＞\Project.toml
+    ＜パッケージ名＞\src\＜パッケージ名＞.jl</pre></div>
+    作ったパッケージ環境に入る。
+    <div class="code"><pre>
+<span class="jblue">pkg>&nbsp;</span> activate ＜パッケージ名＞\\
+  Activating project at `C:\Users\sator\＜パッケージ名＞`</pre></div>
+    デフォルトで書かれているもの以外でProject.tomlに書くものは、
+    <ul>
+        <li>依存パッケージ（[deps]）</li>
+        <li>Extensionが依存するパッケージ（[weakdeps]）</li>
+        <li>依存パッケージのバージョン指定（[compat]）</li>
+        <li>テストコードが依存するパッケージ（[extra]）</li>
+    </ul>
+    depsとweakdepsはパッケージモードでaddすれば自動的に記述される。srcディレクトリに自分のパッケージの
+    内容を書く。外部から<span class="code">using ＜パッケージ名＞</span>を実行すると＜パッケージ名＞.jl
+    が実行される。
+    </p>
+    <p>
+        パッケージにaddすると、Manifest.tomlが生成される。これにはその環境にインストールされるパッケージが
+        すべて記述される。（パッケージが依存するパッケージとか。あと、rmしたパッケージもgcするまでは一定期間
+        保管される。逆にパッケージ関連でコケる場合は<span class="code">gc --all</span>してみるといいかもしれない。）
+        Mainfest.tomlは基本的に人間が編集するものではない。Manifest.tomlの内容は環境依存なので、githubに上げたり
+        他人とは共有しない。gitなら、.gitignoreに/Manifest.tomlと書く。
+    </p>
 
     <h2 id="whyjulia">なぜ私はJuliaを使うのか？（エッセイ）</h2>
     <p>私が初めてプログラミングに触れたのは中学生の時だった。当時は（今も？）Minecraftが流行っていて、

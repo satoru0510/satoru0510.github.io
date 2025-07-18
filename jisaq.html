@@ -31,7 +31,7 @@
         <li>願わくば実用に耐える量子回路シミュレータにしたい</li>
     </ol>
     現在、1～4については概ね目標を達成できた。Juliaの代表的な量子回路シミュレータのパッケージ
-    <a href="https://github.com/QuantumBFS/Yao.jl">Yao.jl</a>と比較したときの性能はこんな感じ。
+    <a href="https://github.com/QuantumBFS/Yao.jl">Yao.jl</a>と比較したときの性能はこんな感じ。<br>
     <img src="assets/benchmark_jisaq_vs_yao.png" alt="benchmark_jisaq_vs_yao.png"><br>
     回路は1次元横磁場ハイゼンベルグモデル
     $$H = \sum_i X_i X_{i+1} + X_i X_{i+1} + Y_i Y_{i+1} + Z_i Z_{i+1} + X_i$$
@@ -44,9 +44,11 @@
     </ul>
 
     <h2 id="statevec">効率的な状態ベクトルシミュレータの実装</h2>
-    <h2 id="statevec">密度演算子シミュレータの実装</h2>
-    <h2 id="statevec">MPSシミュレータの実装</h2>
-    <h2 id="statevec">CUDA.jlによるカーネルプログラミング</h2>
+    <h2 id="density">密度演算子シミュレータの実装</h2>
+    <h2 id="mps">MPSシミュレータの実装</h2>
+    <h2 id="cuda">CUDA.jlによるカーネルプログラミング</h2>
+    カーネルプログラミングとは、GPU上で動くコードを書くこと。
+    <p></p>
 
     <a href="index.html">トップに戻る</a>
 </body>
