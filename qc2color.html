@@ -5,6 +5,29 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="main.css">
+<style type="text/css">
+    td.zero {
+    background-color: white;
+    }
+    td.one {
+    background-color: black;
+    }
+    td.plus {
+    background-color: red;
+    }
+    td.iplus {
+    background-color: #7fff00;
+    }
+    td.iminus {
+    background-color: #7f00ff;
+    }
+    td.minus {
+    background-color: cyan;
+    }
+    td.cmixed {
+    background-color: #7f7f7f;
+    }
+</style>
 <title>QuantumState2Color</title>
 </head>
 
@@ -132,6 +155,19 @@ end</pre></div>
     これをパッケージとしたものを<a href="https://github.com/satoru0510/QuantumState2Color/tree/main">github</a>
     で入手できる。
     </p>
+    <p>以下にいくつかの量子状態に対応する色とそのHSV、RGB値を示す。<br>
+    <table class="my-table">
+    <tr><th>量子状態</th><th>色</th><th>HSV</th><th>RGB</th></tr>
+    <tr><th>\(|0\rangle\)</th><td class="zero"></td><td>(0, 0.0, 1.0)</td><td>(1.0, 1.0, 1.0)</td></tr>
+    <tr><th>\(|1\rangle\)</th><td class="one"></td><td>(0, 0.0, 0.0)</td><td>(0.0, 0.0, 0.0)</td></tr>
+    <tr><th>\((|0\rangle\ + |1\rangle) / \sqrt{2}\)</th><td class="plus"></td><td>(0, 1.0, 1.0)</td><td>(1.0, 0.0, 0.0)</td></tr>
+    <tr><th>\((|0\rangle\ - |1\rangle) / \sqrt{2}\)</th><td class="minus"></td><td>(180, 1.0, 1.0)</td><td>(0.0, 1.0, 1.0)</td></tr>
+    <tr><th>\((|0\rangle\ + i|1\rangle) / \sqrt{2}\)</th><td class="iplus"></td><td>(90, 1.0, 1.0)</td><td>(0.5, 1.0, 0.0)</td></tr>
+    <tr><th>\((|0\rangle\ - i|1\rangle) / \sqrt{2}\)</th><td class="iminus"></td><td>(270, 1.0, 1.0)</td><td>(0.5, 0.0, 1.0)</td></tr>
+    <tr><th>\(I/2\)</th><td class="cmixed"></td><td>(0, 0.0, 0.5)</td><td>(0.5, 0.5, 0.5)</td></tr>
+    </table>
+    </p>
+
     <a href="index.html">トップに戻る</a>
 </body>
 </html>

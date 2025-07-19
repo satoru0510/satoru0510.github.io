@@ -53,3 +53,11 @@ span.code{
 pre{
     font-size: large;
 }
+
+.my-table th,
+.my-table td {
+  border: 1px solid #999;
+}
+.my-table {
+    border-collapse: collapse;
+}
