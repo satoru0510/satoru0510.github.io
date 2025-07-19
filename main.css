@@ -49,3 +49,7 @@ span.code{
     background-color: black;
     color: white;
 }
+
+pre{
+    font-size: large;
+}
